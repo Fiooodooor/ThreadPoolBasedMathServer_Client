@@ -1,0 +1,7 @@
+<root>
+    <item name='javafx.scene.control.TextInputControl void appendText(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val name="pure" val="true"/>
+        </annotation>
+    </item>
+</root>

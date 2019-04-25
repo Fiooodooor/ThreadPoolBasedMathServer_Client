@@ -1,0 +1,56 @@
+.button {
+    -fx-font: 13 "Arial";
+    -fx-font-weight: bold;
+}
+.buttonSender {
+    -fx-font: 13 "Arial";
+    -fx-font-weight: bold;
+}
+
+.BoldLabel {
+    -fx-font: 13 "Arial";
+    -fx-font-weight: bold;
+}
+.SimpleLabel {
+    -fx-font: 12 "Arial";
+}
+
+.CategoriesLabel {
+    -fx-font: 15 "Arial";
+    -fx-font-weight: bold;
+}
+
+.subPanel {
+    -fx-border-width: 2;
+    -fx-border-color: black;
+    -fx-spacing: 8;
+    -fx-padding: 8;
+}
+.socketGridPane {
+	-fx-alignment: center;
+	-fx-hgap: 10;
+	-fx-vgap: 10;
+    -fx-spacing: 8;
+    -fx-padding: 2;
+	
+}
+.equationGridPane {
+	-fx-alignment: center-right;
+	-fx-hgap: 2;
+	-fx-vgap: 2;
+    -fx-spacing: 2;
+	-fx-padding: 0 15 0 15;	
+}
+.textEdit {	
+    -fx-font: 13 "Arial";
+    -fx-alignment: center;	
+}
+
+.debugLisner {
+    -fx-font: 10 "Arial";	
+}
+.centralImage {
+	-fx-border-width: 2;
+    -fx-border-color: black;
+}
+

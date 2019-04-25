@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="3000" maxWidth="3000" minHeight="700.0" minWidth="900.0" prefHeight="727.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <bottom>
+      <TextArea fx:id="debugText" editable="false" minHeight="60.0" minWidth="600.0" prefHeight="92.0" prefWidth="800.0" styleClass="debugLisner" BorderPane.alignment="BOTTOM_CENTER" />
+   </bottom>
+   <right>
+       <VBox alignment="TOP_CENTER" minHeight="508.0" minWidth="207.0" prefHeight="508.0" prefWidth="207.0" BorderPane.alignment="CENTER">
+          <children>
+              <VBox alignment="CENTER" styleClass="subPanel">
+                 <children>
+                     <Label alignment="CENTER" styleClass="CategorisLabel" text="Connection settings" textAlignment="CENTER" />
+                     <Separator />
+                     <GridPane styleClass="socketGridPane">
+                         <columnConstraints>
+                             <ColumnConstraints hgrow="SOMETIMES" prefWidth="76.0" />
+                             <ColumnConstraints hgrow="SOMETIMES" prefWidth="99.0" />
+                         </columnConstraints>
+                         <rowConstraints>
+                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                         </rowConstraints>
+                        <children>
+                            <TextField fx:id="hostInput" alignment="CENTER" text="127.0.0.1" GridPane.columnIndex="1" />
+                            <Label styleClass="BoldLabel" text="Adress: " GridPane.halignment="RIGHT" />
+                            <TextField fx:id="portInput" alignment="CENTER" text="7755" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label styleClass="BoldLabel" text="Port: " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                            <Button fx:id="disconnectButton" disable="true" mnemonicParsing="false" onAction="#disconnectButtonPressed" text="Disconnect" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                            <Button id="Connect" fx:id="connectButton" mnemonicParsing="false" onAction="#connectButtonPressed" text="Connect" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        </children>
+                     </GridPane>
+                     <Separator prefWidth="200.0" />
+                 </children>
+              </VBox>
+              <GridPane fx:id="equationPane" styleClass="equationGridPane">
+                  <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                 <children>
+                     <Label alignment="CENTER" styleClass="CategoriesLabel" text="Output graph settings:" textAlignment="CENTER" GridPane.columnSpan="2147483647" />
+                     <Separator styleClass="equationGridPane" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="BoldLabel" text="Equation, type R-&gt;R :" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                         <GridPane.margin>
+                             <Insets left="5.0" right="10.0" />
+                         </GridPane.margin>
+                     </Text>
+                     <TextField fx:id="theEquation" text="x^2+2*x-5" GridPane.columnSpan="2147483647" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                         <GridPane.margin>
+                             <Insets left="35.0" />
+                         </GridPane.margin>
+                     </TextField>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="BoldLabel" text=" f(x)=" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                     <Separator styleClass="equationGridPane" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="BoldLabel" text="1) Output canvas size [px]:" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                     <TextField fx:id="imageWidth" styleClass="textEdit" text="1024" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     <TextField fx:id="imageHeight" styleClass="textEdit" text="768" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SimpleLabel" text="W x H :" GridPane.rowIndex="6" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="BoldLabel" text="2) X axis values [begin/end]:" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="7" />
+                     <TextField fx:id="imageEndX" prefHeight="25.0" prefWidth="70.0" styleClass="textEdit" text="20" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                     <TextField fx:id="imageStartX" prefHeight="25.0" prefWidth="70.0" styleClass="textEdit" text="-20" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SimpleLabel" text="b x e =" GridPane.rowIndex="8" />
+                     <TextField fx:id="imageEndY" prefHeight="25.0" prefWidth="70.0" styleClass="textEdit" text="12" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="BoldLabel" text="3) Y axis values [begin/end]:" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="9" />
+                     <TextField fx:id="imageStartY" prefHeight="25.0" prefWidth="70.0" styleClass="textEdit" text="-12" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="SimpleLabel" text="b x e =" GridPane.rowIndex="10" />
+                     <Separator styleClass="equationGridPane" GridPane.columnSpan="2147483647" GridPane.rowIndex="11" />
+                     <Button fx:id="sendRequestButton" disable="true" mnemonicParsing="false" onAction="#sendButtonPressed" prefHeight="26.0" prefWidth="162.0" styleClass="buttonSender" text="Send request" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER" />
+                     <Separator styleClass="equationGridPane" GridPane.columnSpan="2147483647" GridPane.rowIndex="13" />
+                     <Label styleClass="BoldLabel" text="Progres bar: " GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                     <ProgressBar fx:id="progressBar" minWidth="-Infinity" prefWidth="150.0" progress="0.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="15" />
+                 </children>
+              </GridPane>
+          </children>
+       </VBox>
+   </right>
+   <top>
+       <MenuBar BorderPane.alignment="CENTER">
+          <menus>
+              <Menu mnemonicParsing="false" text="Window">
+                 <items>
+                     <MenuItem fx:id="menuClose" mnemonicParsing="false" onAction="#applicationClose" text="Close" />
+                 </items>
+              </Menu>
+          </menus>
+       </MenuBar>
+   </top>
+   <center>
+
+               <ImageView fx:id="theCanvas" fitHeight="815.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" styleClass="centralImage"/>
+
+   </center>
+</BorderPane>
