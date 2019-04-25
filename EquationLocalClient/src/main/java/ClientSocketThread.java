@@ -91,7 +91,7 @@ public class ClientSocketThread implements Runnable
                         for (int i=0; i<fdata.optInt("size", -1); i++) {
                             avalibleSymbols.put(fdata.getJSONArray("namesArray").getString(i), fdata.getJSONArray("argumentsArray").getInt(i));    // is there a clearer way?
                         }
-                        System.out.println(getServerUser() + " : serwer wita i informuje że obsluguje nastepujace funkcje matematyczne:");
+                        System.out.println(getServerUser() + " : serwer wita ;-) i informuje że obsluguje nastepujace funkcje matematyczne:");
                         System.out.println(avalibleSymbols);
                         System.out.println("Nalezy to rozumiec jako NazwaFunkcji=1 oznacza, że funkcja przyjmuje postac z 1 arg. NazwaFunkcji(a) ");
 
